@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arvore</title>
+</head>
+
+<body>
+    <script>
+        // Define um nó de árvore
+        class Nodo {
+            constructor(valor) {
+                this.valor = valor; // Valor armazenado no nó
+                this.esquerda = null; // Filho à esquerda
+                this.direita = null; // Filho à direita
+            }
+        }
+
+        // Cria a raiz da árvore
+        let raiz = new Nodo(1); // Nó raiz com valor 1
+
+        // Adiciona filhos à raiz
+        raiz.esquerda = new Nodo(2); // Filho à esquerda com valor 2
+        raiz.direita = new Nodo(3); // Filho à direita com valor 3
+
+        // Função para imprimir os valores dos nós (pré-ordem)
+        function percorrerPreOrdem(nodo) {
+            if (nodo !== null) {
+                console.log(nodo.valor); // Imprime o valor do nó atual
+                percorrerPreOrdem(nodo.esquerda); // Percorre a subárvore esquerda
+                percorrerPreOrdem(nodo.direita); // Percorre a subárvore direita
+            }
+        }
+
+        // Percorre e imprime a árvore a partir da raiz
+        percorrerPreOrdem(raiz); // Imprime 1, 2, 3
+    </script>
+</body>
+
+</html>
